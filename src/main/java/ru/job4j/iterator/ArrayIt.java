@@ -7,6 +7,7 @@ public class ArrayIt implements Iterator<Integer> {
     private int point = 0;
 
     public ArrayIt(int[] data) {
+
         this.data = data;
     }
 
