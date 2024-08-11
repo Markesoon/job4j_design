@@ -41,7 +41,6 @@ class NameLoadTest {
 
     @Test
     void checkMissingValueAfterEquals() {
-
         NameLoad nameLoad = new NameLoad();
         String invalidName = "keyWithoutValue=";
         assertThatThrownBy(() -> nameLoad.parse(invalidName))
