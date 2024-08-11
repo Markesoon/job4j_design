@@ -16,7 +16,7 @@ class BoxTest {
 
     @Test
     void isThisUNKNOWN() {
-        Box box = new Box(0,0);
+        Box box = new Box(0, 0);
         String name = box.whatsThis();
         assertThat(name).isEqualTo("Unknown object");
     }
@@ -52,7 +52,7 @@ class BoxTest {
 
     @Test
     void getAreaWithPrecision() {
-        Box box = new Box(8,3);
+        Box box = new Box(8, 3);
         double result = box.getArea();
         assertThat(result).isGreaterThan(53.9d)
                 .isLessThan(56.5d);
@@ -60,7 +60,7 @@ class BoxTest {
 
     @Test
     void getAreaWithPercentage() {
-        Box box = new Box(8,1);
+        Box box = new Box(8, 1);
         double result = box.getArea();
         assertThat(result).isEqualTo(6.0d)
                 .isNotNegative();
