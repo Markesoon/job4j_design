@@ -1,8 +1,10 @@
 package ru.job4j.assertj;
 
+import org.assertj.core.data.Percentage;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.withPrecision;
 
 class BoxTest {
     @Test
@@ -62,7 +64,8 @@ class BoxTest {
     void getAreaWithPercentage() {
         Box box = new Box(8, 1);
         double result = box.getArea();
-        assertThat(result).isEqualTo(6.0d)
-                .isNotNegative();
+        assertThat(result).isEqualTo(6.0d, withPrecision(0.001d))
+                .isCloseTo(6.0d, withPrecision(0.01d))
+                .isCloseTo(6.0d, Percentage.withPercentage(1.0d));
     }
 }
