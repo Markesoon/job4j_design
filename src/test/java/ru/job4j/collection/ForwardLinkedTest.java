@@ -125,7 +125,6 @@ class ForwardLinkedTest {
         Iterator<Integer> iterator = list.iterator();
         assertThat(iterator.next()).isEqualTo(1);
         assertThat(iterator.next()).isEqualTo(2);
-
     }
 
     @Test
