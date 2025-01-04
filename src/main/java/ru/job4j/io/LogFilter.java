@@ -17,8 +17,9 @@ public class LogFilter {
     }
 
     public List<String> filter() {
+        List<String> rsl = null;
         try (BufferedReader input = new BufferedReader(new FileReader(file))) {
-            return input.lines()
+            rsl = input.lines()
                     .map(e -> e.split(" "))
                     .filter(e -> e[e.length - 2].equals("404"))
                     .map(Arrays::toString)
@@ -26,7 +27,7 @@ public class LogFilter {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return Collections.emptyList();
+        return rsl;
     }
 
     public static void main(String[] args) {
