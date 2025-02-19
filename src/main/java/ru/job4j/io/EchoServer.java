@@ -15,8 +15,6 @@ public class EchoServer {
                     output.write("HTTP/1.1 200 OK\r\n\r\n".getBytes());
                     for (String string = input.readLine(); string != null && !string.isEmpty(); string = input.readLine()) {
                         if (string.contains("msg=Bye")) {
-                            output.write("logging out of the server\r\n\r\n".getBytes());
-                            output.flush();
                             server.close();
                             break;
                         }
